@@ -47,7 +47,7 @@ namespace unit02_hilo
                 // If the user reaches a score below 0 then they loose the game
                 //and the score resets so that they can play again if they 
                 //want to
-                if(Score >= 0)
+                if(Score <= 0)
                 {
                     Score = 300;
                     Console.WriteLine("You lost");
