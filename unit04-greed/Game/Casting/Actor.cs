@@ -1,6 +1,7 @@
 using System;
 
 
+
 namespace unit04_greed.Game.Casting
 {
     /// <summary>
@@ -17,6 +18,8 @@ namespace unit04_greed.Game.Casting
         private Color color = new Color(255, 255, 255); // white
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
+
+        public int Score = 0;
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -81,6 +84,13 @@ namespace unit04_greed.Game.Casting
         {
             int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
             int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
+            position = new Point(x, y);
+        }
+
+        public void MoveNext1(int maxX, int maxY)
+        {
+            int x = position.GetX();
+            int y = ((position.GetY() + 30) + maxY) % maxY;
             position = new Point(x, y);
         }
 
@@ -154,6 +164,15 @@ namespace unit04_greed.Game.Casting
                 throw new ArgumentException("velocity can't be null");
             }
             this.velocity = velocity;
+        }
+
+        public void respon(int maxX, int maxY)
+        {
+            Random rnd = new Random();
+            int positionNew = rnd.Next(0, 60);
+            positionNew = positionNew * 30;
+            position = new Point(positionNew, maxY);
+
         }
 
     }

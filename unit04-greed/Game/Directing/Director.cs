@@ -16,6 +16,8 @@ namespace unit04_greed.Game.Directing
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
 
+        Actor score = new Actor();
+
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
         /// </summary>
@@ -76,7 +78,25 @@ namespace unit04_greed.Game.Directing
                     Artifact artifact = (Artifact) actor;
                     string message = artifact.GetMessage();
                     banner.SetText(message);
+                    videoService.GetHeight();
+                    videoService.GetWidth();
+                    actor.respon(maxX, maxY);
+
+                    if (actor.GetText() == "*")
+                    {
+                        score.Score ++;
+                    }
+
+                    else if(actor.GetText() == "O")
+                    {
+                        score.Score --;
+                    }
                 }
+                
+                videoService.DisplayScore(score.Score);
+                actor.MoveNext1(maxX, maxY);
+
+                
             } 
         }
 

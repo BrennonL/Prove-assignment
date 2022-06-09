@@ -82,6 +82,7 @@ namespace unit04_greed.Game.Services
             {
                 DrawActor(actor);
             }
+
         }
         
         /// <summary>
@@ -165,6 +166,17 @@ namespace unit04_greed.Game.Services
             int b = color.GetBlue();
             int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);
+        }
+
+        ///<Summery>
+        /// Parameters: the score. Displays the score one the screen
+        ///</Summery>
+        public void DisplayScore(int Score)
+        {
+
+            string ScoreBoard = $"Score: {Score}";
+            Raylib.DrawText(ScoreBoard, 0, 0, 60, Raylib_cs.Color.WHITE);
+            
         }
 
     }

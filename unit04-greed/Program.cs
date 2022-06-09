@@ -31,8 +31,6 @@ namespace Unit04
             "O",
             "O",
             "O",
-            "O",
-            "O",
             "*"
         };
 
@@ -70,7 +68,7 @@ namespace Unit04
             for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
             {
                 
-                string text = astroidsDimonds[random.Next(1,6)];
+                string text = astroidsDimonds[random.Next(4)];
                 //string message = messages[i];
 
                 int x = random.Next(1, COLS);
