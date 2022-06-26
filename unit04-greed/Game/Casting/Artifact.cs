@@ -34,5 +34,11 @@ namespace unit04_greed.Game.Casting
         {
             this.message = message;
         }
+        public override void MoveNext(int maxX, int maxY)
+        {
+            int x = position.GetX();
+            int y = ((position.GetY() + 30) + maxY) % maxY;
+            position = new Point(x, y);
+        }
     }
 }

@@ -16,10 +16,10 @@ namespace unit04_greed.Game.Casting
         private string text = "";
         private int fontSize = 15;
         private Color color = new Color(255, 255, 255); // white
-        private Point position = new Point(0, 0);
-        private Point velocity = new Point(0, 0);
+        protected Point position = new Point(0, 0);
+        protected Point velocity = new Point(0, 0);
 
-        public int Score = 0;
+ 
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -80,19 +80,14 @@ namespace unit04_greed.Game.Casting
         /// </summary>
         /// <param name="maxX">The maximum x value.</param>
         /// <param name="maxY">The maximum y value.</param>
-        public void MoveNext(int maxX, int maxY)
+        public virtual void MoveNext(int maxX, int maxY)
         {
             int x = ((position.GetX() + velocity.GetX()) + maxX) % maxX;
             int y = ((position.GetY() + velocity.GetY()) + maxY) % maxY;
             position = new Point(x, y);
         }
 
-        public void MoveNext1(int maxX, int maxY)
-        {
-            int x = position.GetX();
-            int y = ((position.GetY() + 30) + maxY) % maxY;
-            position = new Point(x, y);
-        }
+
 
         /// <summary>
         /// Sets the actor's color to the given value.
